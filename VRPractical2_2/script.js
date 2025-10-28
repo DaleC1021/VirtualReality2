@@ -18,10 +18,9 @@ window.addEventListener("DOMContentLoaded",function(){
 
     dude=this.document.querySelector("#dude");
     dude.size=1;
-    dude.dSize=0.01;
+    dude.dSize=0.2;
 
     sun=this.document.querySelector("#sun");
-    // start transparent and slowly fade in
     sun.opacity = 0.0;
     sun.dOpacity = 0.002;
 
