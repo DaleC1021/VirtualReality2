@@ -1,4 +1,4 @@
-let scene, ufo=[], rocket=[], tree=[], house;
+let scene, ufos=[], rockets=[], trees=[], house;
 
 
 window.addEventListener("DOMContentLoaded",function() {

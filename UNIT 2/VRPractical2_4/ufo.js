@@ -20,8 +20,7 @@ class Ufo{
         body.setAttribute("color","gray");
         body.setAttribute("position","0 -1.5 -2");
         body.setAttribute("scale", "2 0.5 2");
-        this.obj.append(body);
-
+        this.obj.append(body);                                                                                                                        
     
          this.obj.setAttribute("position",{x:this.x, y:this.y, z:this.z});
         scene.append( this.obj )
