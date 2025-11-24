@@ -3,26 +3,26 @@ let scene, ufos=[], rockets=[], trees=[], house;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene")
-  for(let i=0; i<100; i++){
-    let rocket = new Rocket(rnd(-50,50), rnd(-1,-10), rnd(-50,50));
-    rockets.push(rocket);
+  for(let i=0; i<10; i++){
+    let rockets = new rockets(rnd(-50,50), rnd(-1,-10), rnd(-50,50));
+    rockets.push(rockets);
   }
 
-  for(let i=0; i<100; i++){
-    let ufo = new Ufo(rnd(-50,50), rnd(10,30), rnd(-50,50), rnd(3, 30)*0.01);
-    ufos.push(ufo);
+  for(let i=0; i<10; i++){
+    let ufos = new Ufo(rnd(-50,50), rnd(10,30), rnd(-50,50), rnd(3, 30)*0.01);
+    ufos.push(Ufo);
   }
 
   loop();
 })
 
 function loop(){
-  for(let rocket of rockets){
-    rocket.ascend();
+  for(let rockets of rockets){
+    rockets.ascend();
   }
 
   for(let ufo of ufos){
-    ufo.invade();
+    ufos.invade();
   }
     
   window.requestAnimationFrame(loop);
