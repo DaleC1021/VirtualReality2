@@ -4,7 +4,7 @@ let scene, rockets = [], ufos = [];
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene"); 
   for(let i=0; i<100; i++){
-    let rocket = new Rocket(rnd(-50,50), rnd(-1,-10), rnd(-50,50));
+    let rocket = new rocket(rnd(-50,50), rnd(-1,-10), rnd(-50,50));
     rockets.push(rocket);
   }
 
