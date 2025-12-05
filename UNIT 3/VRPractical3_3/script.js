@@ -1,5 +1,5 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 3, enemy_killed = 0;
+let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 10, enemy_killed = 0;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
@@ -16,6 +16,16 @@ window.addEventListener("DOMContentLoaded",function() {
   setTimeout(loop,100);
   setTimeout(countdown,100);
 })
+
+for(let i = 0; i < 20; i++){
+    let tree = new Tree(rnd(-20,20), 0 , rnd(-20,20));
+    tree.scale(rnd(1,4));
+  }
+  snowman = new Snowman(-5,0);
+  //Challenge 3: Create a cloud at some high position. Don't forget to declare the variable up top.
+
+  //Challenge 7: Create a snowflake at some high position. Don't forget to declare the variable up top.
+  loop();
 
 function loop(){
   if(bullet){
