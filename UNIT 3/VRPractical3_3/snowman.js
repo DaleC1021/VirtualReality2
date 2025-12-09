@@ -41,4 +41,7 @@ class Snowman{
     this.a += this.da;
     this.obj.setAttribute("rotation",{x:0, y:this.a, z:0});
   }
+  destroy(){
+    scene.removeChild(this.obj)
+  }
 }
