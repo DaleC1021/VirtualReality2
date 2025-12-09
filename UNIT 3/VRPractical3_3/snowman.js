@@ -42,6 +42,9 @@ class Snowman{
     this.obj.setAttribute("rotation",{x:0, y:this.a, z:0});
   }
   destroy(){
-    scene.removeChild(this.obj)
+    if(this.obj){
+      if(typeof this.obj.remove === 'function') this.obj.remove()
+      else if(this.obj.parentNode) this.obj.parentNode.removeChild(this.obj)
+    }
   }
 }

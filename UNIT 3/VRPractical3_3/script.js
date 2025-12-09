@@ -35,21 +35,18 @@ function loop(){
   if(bullet){
     bullet.fire()
     
-
     for(let i = enemies.length - 1; i >= 0; i--){
       let enemy = enemies[i]
       if(distance(bullet.obj, enemy.obj) < 1.5){
-
         enemy.destroy()
         enemies.splice(i, 1)
-        bullet.destroy()
-        bullet = null
         enemy_killed++
         updateUI()
         
         if(enemies.length === 0){
           endGame(true) // win
         }
+        break
       }
     }
   }
