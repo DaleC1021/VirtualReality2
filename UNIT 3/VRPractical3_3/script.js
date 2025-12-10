@@ -1,6 +1,6 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
-let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 5, enemy_killed = 0;
-let time_remaining = 60, total_snowmen = 5, game_over = false, ui_text;
+let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 3, enemy_killed = 0;
+let time_remaining = 30, total_snowmen = 5, game_over = false, ui_text;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded",function() {
     tree.scale(rnd(1,4));
   }
 
-  for(let i = 0; i<5; i++){
+  for(let i = 0; i<10; i++){
     let snowman = new Snowman(rnd(-45,45),rnd(-20,17));
     enemies.push(snowman);
   }
@@ -88,13 +88,13 @@ function createUI(){
 }
 
 function updateUI(){
-  ui_text.innerHTML = `Ammo: ${ammo_count}<br>Snowmen Killed: ${enemy_killed}/${total_snowmen}<br>Time: ${time_remaining}s`
+  ui_text.innerHTML = `Ammo: ${ammo_count}<br>Snowmen Killed: ${enemy_killed}/10 <br>Time: ${time_remaining}s`
 }
 
 function endGame(won){
   game_over = true
   let message = won ? 'You Win!' : 'You Lose!'
-  ui_text.innerHTML = `Ammo: ${ammo_count}<br>Snowmen Killed: ${enemy_killed}/${total_snowmen}<br>Time: ${time_remaining}s<br><span style="color: ${won ? 'lime' : 'red'}; font-size: 36px;">${message}</span>`
+  ui_text.innerHTML = `Ammo: ${ammo_count}<br>Snowmen Killed: ${enemy_killed}/10 <br>Time: ${time_remaining}s<br><span style="color: ${won ? 'lime' : 'red'}; font-size: 36px;">${message}</span>`
 }
 
 function distance(obj1,obj2){

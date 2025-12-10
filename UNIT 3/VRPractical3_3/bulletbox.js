@@ -21,6 +21,6 @@ class BulletBox{
         }
         const i = ammo_boxes.indexOf(this);
         if(i !== -1) ammo_boxes.splice(i,1);
-        ammo_count += 5;
+        ammo_count += 1;
     }
 }
